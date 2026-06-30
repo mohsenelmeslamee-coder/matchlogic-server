@@ -1,0 +1,6 @@
+# AdSense Verification - Placeholder for future implementation
+# Replace with your actual AdSense publisher ID when ready
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# For potential future advertising partners
+# This file declares who is authorized to sell ads on your site

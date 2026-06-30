@@ -1,0 +1,30 @@
+{
+  "name": "matchlogic-server",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "stress-test": "node stress-test.js stress",
+    "rate-limit": "node stress-test.js rate-limit",
+    "icons": "node scripts/generate-pwa-icons.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@vercel/kv": "^3.0.0",
+    "axios": "^1.13.5",
+    "compression": "^1.8.1",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "google-translate-api-next": "^0.1.0",
+    "helmet": "^7.1.0",
+    "node-cache": "^5.1.2"
+  }
+}

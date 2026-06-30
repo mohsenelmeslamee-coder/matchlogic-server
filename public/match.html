@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- === PRIMARY SEO === -->
+  <title>تفاصيل المباراة | MatchLogic — ماتش لوجيك</title>
+  <meta name="description" content="تفاصيل المباراة: الأهداف والأحداث، التشكيلة، الإحصائيات المباشرة، وتحليل ذكي لكرة القدم. تابع مبارياتك مع ماتش لوجيك." id="metaDesc" />
+  <meta name="keywords" content="تفاصيل المباراة, إحصائيات المباراة, تشكيلة الفريق, أهداف المباراة, تحليل كرة القدم, match details, live statistics, team lineup, match analysis, football" />
+  <meta name="author" content="MatchLogic" />
+  <meta name="robots" content="index, follow, max-snippet:-1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="MatchLogic" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <!-- === CANONICAL (dynamic — JS updates this) === -->
+  <link rel="canonical" href="https://matchlogic-server.vercel.app/match.html" id="canonicalTag" />
+
+  <!-- === OPEN GRAPH === -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MatchLogic | ماتش لوجيك" />
+  <meta property="og:title" content="تفاصيل المباراة | ماتش لوجيك" id="ogTitle" />
+  <meta property="og:description" content="تفاصيل المباراة: الأهداف، التشكيلة، الإحصائيات المباشرة، وتحليل ذكي. تابع مبارياتك مع ماتش لوجيك." id="ogDesc" />
+  <meta property="og:url" content="https://matchlogic-server.vercel.app/match.html" id="ogUrl" />
+  <meta property="og:image" content="https://matchlogic-server.vercel.app/icons/icon-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:locale" content="ar_AR" />
+
+  <!-- === TWITTER CARD === -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تفاصيل المباراة | ماتش لوجيك" />
+  <meta name="twitter:description" content="الأهداف، التشكيلة، الإحصائيات المباشرة، وتحليل ذكي." />
+  <meta name="twitter:image" content="https://matchlogic-server.vercel.app/icons/icon-512x512.png" />
+
+  <!-- === HREFLANG === -->
+  <link rel="alternate" hreflang="ar" href="https://matchlogic-server.vercel.app/match.html" />
+  <link rel="alternate" hreflang="en" href="https://matchlogic-server.vercel.app/match.html" />
+  <link rel="alternate" hreflang="x-default" href="https://matchlogic-server.vercel.app/match.html" />
+
+  <!-- === SCHEMA.ORG — BreadcrumbList === -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ماتش لوجيك",
+        "item": "https://matchlogic-server.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "تفاصيل المباراة",
+        "item": "https://matchlogic-server.vercel.app/match.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- === GOOGLE VERIFICATION === -->
+  <meta name="google-site-verification" content="4j-DHV11xyynfH_ro20u7hpc0N0mR9B2go81mn4zAqc" />
+
+  <!-- === FONTS & STYLES === -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="/css/style.css?v=7" as="style" />
+  <link rel="stylesheet" href="/css/style.css?v=7" />
+  <link rel="preload" href="/js/match.js?v=7" as="script" />
+
+  <!-- === PWA ASSETS === -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png" />
+
+  <!-- === DNS PREFETCH === -->
+  <link rel="dns-prefetch" href="//v3.football.api-sports.io" />
+</head>
+<body>
+
+<header class="top-bar match-detail-header">
+  <button type="button" class="btn-back" onclick="goBack()" aria-label="العودة إلى الصفحة السابقة">⬅ رجوع</button>
+  <h1>MatchLogic | ماتش لوجيك</h1>
+</header>
+
+<main class="match-detail-main" id="main-content">
+  <div id="matchHeaderInfo" role="region" aria-label="معلومات المباراة"></div>
+
+  <div class="match-detail-tabs" role="tablist" aria-label="تبويبات تفاصيل المباراة">
+    <button type="button" role="tab" id="tabEvents"     class="match-detail-tab active" aria-selected="true"  data-tab="events">الأحداث</button>
+    <button type="button" role="tab" id="tabLineups"    class="match-detail-tab"        aria-selected="false" data-tab="lineups">التشكيلة</button>
+    <button type="button" role="tab" id="tabStatistics" class="match-detail-tab"        aria-selected="false" data-tab="statistics">الإحصائيات</button>
+    <button type="button" role="tab" id="tabAi"         class="match-detail-tab"        aria-selected="false" data-tab="ai">التحليل الذكي</button>
+    <button type="button" role="tab" id="tabMatches"    class="match-detail-tab"        aria-selected="false" data-tab="matches">الترتيب</button>
+  </div>
+
+  <div id="matchDetails" class="match-detail-content">
+    <div id="panelEvents"     class="match-detail-panel active" role="tabpanel" aria-labelledby="tabEvents"><p class="loading">جاري التحميل...</p></div>
+    <div id="panelLineups"    class="match-detail-panel"        role="tabpanel" aria-labelledby="tabLineups"    hidden><p class="loading">جاري التحميل...</p></div>
+    <div id="panelStatistics" class="match-detail-panel"        role="tabpanel" aria-labelledby="tabStatistics" hidden><p class="loading">جاري التحميل...</p></div>
+    <div id="panelAi"         class="match-detail-panel"        role="tabpanel" aria-labelledby="tabAi"         hidden>
+      <div id="aiPredictionContainer" class="ai-prediction-wrapper">
+        <p class="loading">جاري التحليل...</p>
+      </div>
+    </div>
+    <div id="panelMatches"    class="match-detail-panel"        role="tabpanel" aria-labelledby="tabMatches"    hidden><p class="loading">جاري التحميل...</p></div>
+  </div>
+</main>
+
+<script src="/js/match.js?v=7" defer></script>
+</body>
+</html>

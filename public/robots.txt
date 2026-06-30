@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /icons/
+Allow: /manifest.json
+Allow: /sitemap.xml
+
+# Block backend & sensitive files
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /server.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /stress-test.js
+Disallow: /resize_icons*
+Disallow: /scripts/
+Disallow: /.vercel/
+
+# Block duplicate query params that create thin content
+Disallow: /*?*date=today*league=*
+
+# Crawl-delay for bots that respect it
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://matchlogic-server.vercel.app/sitemap.xml
